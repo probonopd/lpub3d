@@ -66,3 +66,6 @@ script:
   - qmake -v
   - qmake -r
   - make
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then 
+      sudo make install
+    fi
