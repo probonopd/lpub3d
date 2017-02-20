@@ -93,7 +93,8 @@ script:
       cd ../../../ ;
       cd usr/bin ;
       wget http://ldglite.sourceforge.net/ldglite1_2_3beta64bit.gz ;
-      tar xf ldglite1_2_3beta64bit.gz ;
+      gunzip -N ldglite1_2_3beta64bit.gz ;
+      chmod a+x ldglite ;
       cd ../../ ;
       cd .. ;
       wget -c "https://github.com/probonopd/linuxdeployqt/releases/download/3/linuxdeployqt-3-x86_64.AppImage" ;
