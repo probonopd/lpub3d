@@ -74,6 +74,6 @@ script:
       cp -r /app appdir/usr ;
       wget -c "https://github.com/probonopd/linuxdeployqt/releases/download/3/linuxdeployqt-3-x86_64.AppImage" ;
       chmod a+x linuxdeployqt*.AppImage ;
-      ./linuxdeployqt*.AppImage appdir/usr/bin/lpub3d
-      ./linuxdeployqt*.AppImage appdir/usr/bin/lpub3d -appimage
+      ./linuxdeployqt*.AppImage appdir/usr/bin/lpub3d ;
+      ./linuxdeployqt*.AppImage appdir/usr/bin/lpub3d -appimage ;
     fi
