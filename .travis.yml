@@ -75,7 +75,7 @@ script:
       sudo checkinstall --pkgname=app --pkgversion="1" --backup=no --fstrans=no --default --deldoc ;
       ls ;
       mkdir appdir ; cd appdir ;
-      dpkg -x /home/travis/build/probonopd/lpub3d/app_1-1_amd64.deb . ; find . ;
+      dpkg -x ../app_1-1_amd64.deb . ; find . ;
       cp ./usr/share/applications/lpub3d.desktop . ;
       cp ./usr/share/pixmaps/lpub3d.png . ;
       wget -c "https://github.com/probonopd/linuxdeployqt/releases/download/3/linuxdeployqt-3-x86_64.AppImage" ;
