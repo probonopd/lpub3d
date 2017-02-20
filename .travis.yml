@@ -63,15 +63,19 @@ install:
     fi
     
 script:
-  - qmake -v
-  - qmake -r
+  - qmake PREFIX=/usr/local -v
+  - qmake PREFIX=/usr/local -r
   - make
+  - unset QT_PLUGIN_PATH
+  - unset LD_LIBRARY_PATH
+  - unset QTDIR
   - if [ "$TRAVIS_OS_NAME" = "linux" ]; then
       find . ;
-      sudo make install DESTDIR=/app ;
-      sudo chown -R $USER /app ;
+      rm -rf /usr/local/* ;
+      sudo make install ;
+      sudo chown -R $USER /usr/local ;
       mkdir -p appdir/ ;
-      cp -r /app appdir/usr ;
+      cp -r /usr/local appdir/usr ;
       wget -c "https://github.com/probonopd/linuxdeployqt/releases/download/3/linuxdeployqt-3-x86_64.AppImage" ;
       chmod a+x linuxdeployqt*.AppImage ;
       ./linuxdeployqt*.AppImage appdir/usr/bin/lpub3d ;
