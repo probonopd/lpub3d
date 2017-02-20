@@ -79,6 +79,6 @@ script:
       find . ;
       wget -c "https://github.com/probonopd/linuxdeployqt/releases/download/3/linuxdeployqt-3-x86_64.AppImage" ;
       chmod a+x linuxdeployqt*.AppImage ;
-      ./linuxdeployqt*.AppImage usr/bin/lpub3d ;
-      ./linuxdeployqt*.AppImage usr/bin/lpub3d -appimage ;
+      ./linuxdeployqt*.AppImage ./usr/bin/lpub3d10 ;
+      ./linuxdeployqt*.AppImage ./usr/bin/lpub3d10 -appimage ;
     fi
