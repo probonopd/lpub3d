@@ -81,7 +81,7 @@ script:
       cd ./usr/share/lpub3d ;
       wget http://www.ldraw.org/library/unofficial/ldrawunf.zip ;
       wget http://www.ldraw.org/library/updates/complete.zip ;
-      cd ../../../ ; # Go out of ./usr/share/lpub3d
+      cd ../../../ ;
       cd .. ;
       wget -c "https://github.com/probonopd/linuxdeployqt/releases/download/3/linuxdeployqt-3-x86_64.AppImage" ;
       chmod a+x linuxdeployqt*.AppImage ;
