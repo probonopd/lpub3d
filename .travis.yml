@@ -68,11 +68,11 @@ script:
   - make
   - unset QT_PLUGIN_PATH
   - unset LD_LIBRARY_PATH
-  - export LD_LIBRARY_PATH=/app/usr/lib:/app/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
   - unset QTDIR
+  - # Possibly need to set LD_LIBRARY_PATH to the extracted location of the dummy deb
   - if [ "$TRAVIS_OS_NAME" = "linux" ]; then
       sudo apt-get -y install checkinstall ;
-      sudo checkinstall --pkgname=app --pkgversion="1" --backup=no --fstrans=no --default ;
+      sudo checkinstall --pkgname=app --pkgversion="1" --backup=no --fstrans=no --default --deldoc ;
       ls ;
       mkdir appdir ; cd appdir ;
       dpkg -x /home/travis/build/probonopd/lpub3d/app_1-1_amd64.deb . ;
