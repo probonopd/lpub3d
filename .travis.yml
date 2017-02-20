@@ -14,7 +14,7 @@ matrix:
     sudo: required
     compiler: gcc
     env:
-     - QT_BASE=57
+     - QT_BASE=58
   - os: osx
     compiler: clang
     env:
@@ -28,6 +28,7 @@ before_install:
   - if [[ "$QT_BASE" = "55" && "$TRAVIS_OS_NAME" = "linux" ]]; then sudo add-apt-repository ppa:beineri/opt-qt551-trusty -y; fi
   - if [ "$QT_BASE" = "56" ]; then sudo add-apt-repository ppa:beineri/opt-qt562-trusty -y; fi
   - if [[ "$QT_BASE" = "57" && "$TRAVIS_OS_NAME" = "linux" ]]; then sudo add-apt-repository ppa:beineri/opt-qt571-trusty -y; fi
+  - if [[ "$QT_BASE" = "58" && "$TRAVIS_OS_NAME" = "linux" ]]; then sudo add-apt-repository ppa:beineri/opt-qt58-trusty -y; fi
   - if [ "$TRAVIS_OS_NAME" = "linux" ]; then 
       sudo apt-get update -qq;
     else
@@ -50,6 +51,14 @@ install:
   - if [ "$QT_BASE" = "57" ]; then
       if [ "$TRAVIS_OS_NAME" = "linux" ]; then 
         sudo apt-get install -qq qt57base; source /opt/qt57/bin/qt57-env.sh; 
+      else
+        brew install qt5;
+        brew link --force qt5;
+      fi
+    fi
+  - if [ "$QT_BASE" = "58" ]; then
+      if [ "$TRAVIS_OS_NAME" = "linux" ]; then 
+        sudo apt-get install -qq qt58base; source /opt/qt58/bin/qt58-env.sh; 
       else
         brew install qt5;
         brew link --force qt5;
