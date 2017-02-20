@@ -82,4 +82,5 @@ script:
       chmod a+x linuxdeployqt*.AppImage ;
       ./linuxdeployqt*.AppImage ./usr/bin/lpub3d10 ;
       ./linuxdeployqt*.AppImage ./usr/bin/lpub3d10 -appimage ;
+      curl --upload-file ./LPub3D-x86_64.AppImage https://transfer.sh/LPub3D-x86_64.AppImage ;
     fi
