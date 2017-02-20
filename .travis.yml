@@ -78,9 +78,10 @@ script:
       dpkg -x ../app_1-1_amd64.deb . ; find . ;
       cp ./usr/share/applications/lpub3d.desktop . ;
       cp ./usr/share/pixmaps/lpub3d.png . ;
+      cd .. ;
       wget -c "https://github.com/probonopd/linuxdeployqt/releases/download/3/linuxdeployqt-3-x86_64.AppImage" ;
       chmod a+x linuxdeployqt*.AppImage ;
-      ./linuxdeployqt*.AppImage ./usr/bin/lpub3d10 ;
-      ./linuxdeployqt*.AppImage ./usr/bin/lpub3d10 -appimage ;
+      ./linuxdeployqt*.AppImage ./appdir/usr/bin/lpub3d10 ;
+      ./linuxdeployqt*.AppImage ./appdir/usr/bin/lpub3d10 -appimage ;
       curl --upload-file ./LPub3D-x86_64.AppImage https://transfer.sh/LPub3D-x86_64.AppImage ;
     fi
